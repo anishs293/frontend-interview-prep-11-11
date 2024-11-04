@@ -1,10 +1,12 @@
 # ✨ What is a Generator Function in JavaScript?
 
-A **generator function** in JavaScript is a special type of function that can be paused and resumed. Unlike normal functions, which run from start to finish, a generator function can yield multiple values over time, allowing the function to be paused at each `yield` keyword and resumed later, maintaining its context and state.
+
+A **generator function** in JavaScript is a special type of function that can be paused and resumed during runtime. Unlike normal functions, which run from start to finish, a generator function can yield multiple values over time, allowing the function to be paused at each `yield` keyword and resumed later, maintaining its context and state.
 
 - **Syntax**: Defined with `function*` syntax and uses the `yield` keyword to produce a sequence of values.
 - **Execution**: Each time the generator function is called (using `.next()`), it resumes from where it last paused, making it useful for handling sequences and asynchronous tasks.
 
+![alt text](../../../05_Resources/images_used/generator.jpg)
 ---
 
 # 🗓 When is a Generator Function Used?
@@ -21,7 +23,7 @@ Generator functions are useful in several scenarios:
 
 ### 1. Syntax
 
-- A generator function is declared with `function*` and uses the `yield` keyword to pause execution and return values.
+- A generator function is declared with `function*` and uses the `yield` keyword to pause execution and return values to the caller.
 
    ```javascript
    function* myGenerator() {
@@ -114,6 +116,8 @@ Generator functions are useful in several scenarios:
 ---
 
 # ✅ Pros and Cons
+Note that async/await uses generator functions behind the scene.
+
 
 ### Pros
 
@@ -137,3 +141,17 @@ Here are some follow-up questions an interviewer might ask after discussing gene
 3. **How can you handle errors in generator functions?**
 4. **What are some real-world use cases where generator functions are still preferable over async/await?**
 5. **How would you create a generator that produces values from two different arrays, alternating between them?**
+
+
+
+
+
+> *💡 Trivia: Regular functions execute from start to finish sequentially. Once a function is invoked, it continues execution until it encounters either a return statement or reaches the end of the function body.*
+
+
+
+## References
+
+- [Generator Functions in JavaScript by Elshaday](https://elshaday.medium.com/generator-functions-in-js-25037e6afa16)
+
+- [Javascript.Info : Generators](https://javascript.info/generators)
