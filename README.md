@@ -15,9 +15,6 @@ Welcome to the **Frontend Interview Preparation Guide**! This repository is a co
 3. [Coding Problems](./03_Coding_Problems/)
    - [JavaScript](./03_Coding_Problems/JavaScript/)
    - [React](./03_Coding_Problems/React/)
-4. [Interview Questions](./04_Interview_Questions/)
-5. [Resources](./05_Resources/)
-6. [Tools and Tips](./06_Tools_and_Tips/)
 
 ## 📝 **How to Use This Repository**
 
