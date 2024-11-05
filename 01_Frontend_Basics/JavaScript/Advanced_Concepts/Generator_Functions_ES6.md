@@ -1,12 +1,11 @@
 # ✨ What is a Generator Function in JavaScript?
 
-
 A **generator function** in JavaScript is a special type of function that can be paused and resumed during runtime. Unlike normal functions, which run from start to finish, a generator function can yield multiple values over time, allowing the function to be paused at each `yield` keyword and resumed later, maintaining its context and state.
 
 - **Syntax**: Defined with `function*` syntax and uses the `yield` keyword to produce a sequence of values.
 - **Execution**: Each time the generator function is called (using `.next()`), it resumes from where it last paused, making it useful for handling sequences and asynchronous tasks.
 
-![alt text](../../../05_Resources/images_used/generator.jpg)
+![alt text](../../../06_Resources/images_used/generator.jpg)
 ---
 
 # 🗓 When is a Generator Function Used?
@@ -37,9 +36,9 @@ Generator functions are useful in several scenarios:
 
 - When you call a generator function, it returns an iterator object, not the final result. You can retrieve values by calling `.next()` on the iterator.
 
-   - **`next()` Method**: Calling `.next()` on a generator object runs the function until the nearest `yield`, returning an object with:
-      - `value`: The value yielded by the generator.
-      - `done`: Boolean indicating if the function has completed execution.
+  - **`next()` Method**: Calling `.next()` on a generator object runs the function until the nearest `yield`, returning an object with:
+    - `value`: The value yielded by the generator.
+    - `done`: Boolean indicating if the function has completed execution.
 
    ```javascript
    const gen = myGenerator();
@@ -116,8 +115,8 @@ Generator functions are useful in several scenarios:
 ---
 
 # ✅ Pros and Cons
-Note that async/await uses generator functions behind the scene.
 
+Note that async/await uses generator functions behind the scene.
 
 ### Pros
 
@@ -142,13 +141,7 @@ Here are some follow-up questions an interviewer might ask after discussing gene
 4. **What are some real-world use cases where generator functions are still preferable over async/await?**
 5. **How would you create a generator that produces values from two different arrays, alternating between them?**
 
-
-
-
-
 > *💡 Trivia: Regular functions execute from start to finish sequentially. Once a function is invoked, it continues execution until it encounters either a return statement or reaches the end of the function body.*
-
-
 
 ## References
 
