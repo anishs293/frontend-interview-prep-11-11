@@ -82,8 +82,71 @@ This thorough yet concise breakdown should convey a solid understanding of the r
 </details>
 
 ---
+2. How do you pass data from a child component to a parent component?
+<details> <summary>Click to see the answer</summary>
 
-2. **Explain the difference between state and props in React?**
+To pass data from **child to parent** in React, we use a **callback function**. The parent component defines a function and passes it to the child as a prop. The child then calls this function to send data back up.
 
-<details>
-<summary>Click to see the answer</summary>
+### Code Example:
+
+```jsx
+// Parent Component
+import React, { useState } from 'react';
+import ChildComponent from './ChildComponent';
+
+function ParentComponent() {
+  const [message, setMessage] = useState('');
+
+  // Callback to receive data from child
+  const handleMessageChange = (newMessage) => {
+    setMessage(newMessage);
+  };
+
+  return (
+    <div>
+      <h1>Parent Component</h1>
+      <p>Message from Child: {message}</p>
+      <ChildComponent onMessageChange={handleMessageChange} />
+    </div>
+  );
+}
+
+export default ParentComponent;
+
+// Child Component
+import React from 'react';
+
+function ChildComponent({ onMessageChange }) {
+  const sendMessageToParent = () => {
+    onMessageChange('Hello from Child!');
+  };
+
+  return (
+    <div>
+      <h2>Child Component</h2>
+      <button onClick={sendMessageToParent}>Send Message to Parent</button>
+    </div>
+  );
+}
+
+export default ChildComponent;
+
+Explanation:
+The ParentComponent defines a message state and handleMessageChange function to update it.
+The ChildComponent calls the onMessageChange function (passed from the parent) when the button is clicked, sending data back up.
+```
+
+**Follow-Up Question:**
+
+Q: What are other ways to share data between components in React?
+
+A: In addition to callbacks, other ways include:
+
+-Context API: Useful for sharing data across multiple levels without prop drilling.
+
+-Global State Management (e.g., Redux): Stores global state accessible by any component.
+
+-Custom Hooks: Can contain logic and state shared across components.
+Event Emitters: Emit events to share data in complex applications.
+
+</details>
