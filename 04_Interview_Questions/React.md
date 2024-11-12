@@ -444,3 +444,58 @@ To optimize React applications, you can use techniques like code splitting, lazy
 </details>
 
 ---
+
+8. **Use state is syncronous?**
+
+<details> <summary>Click to see the answer</summary>
+
+No, useState in React is not entirely synchronous, though it might initially appear to be.
+
+When you call setState in React’s useState hook, React schedules the update, but the update doesn’t happen immediately (i.e., synchronously) in all cases. React’s state updates in function components are asynchronous in the sense that they are batched and do not immediately re-render the component as soon as you call setState.
+
+Here's a deeper look:
+
+Batched Updates for Performance: React may delay the state updates within an event handler or similar context for performance optimization. This means if you call setState multiple times in a function, React will batch them together and apply them all at once at the end of the function. This batching behavior is what makes setState appear asynchronous.
+
+Effect on Immediate Access to State: Since setState doesn’t immediately update the state, if you try to access the updated state immediately after calling setState, you won’t get the new value. The component re-renders only after React has completed its update queue.
+
+Asynchronous Execution Example:
+
+javascript
+Copy code
+const [count, setCount] = useState(0);
+
+function handleClick() {
+    setCount(count + 1);
+    console.log(count); // Still logs the previous state due to the async nature of `useState`
+}
+In this example, if count is initially 0, clicking the button will log 0 even though setCount(count + 1) was called. The updated count will only be reflected after the re-render completes.
+
+Handling Immediate State: To get the updated state immediately, you can use a function-based update. This allows React to use the most recent state value:
+
+javascript
+Copy code
+setCount(prevCount => prevCount + 1);
+Conclusion: So, while useState is not truly "asynchronous" in the JavaScript sense (like a Promise), React’s rendering process around it creates an asynchronous behavior pattern that delays access to the updated state.
+
+Additional Tip for Interview: If they want to go deeper, mention that in React’s Concurrent Mode (if enabled), the async nature of state updates is even more pronounced, as React might delay or pause updates to optimize rendering.
+
+</details>
+
+---
+
+9. **Set state is synchronous?**
+
+<details> <summary>Click to see the answer</summary>
+
+
+In an interview, you can explain the behavior of setState in a clear and nuanced way since the answer can be confusing. Here’s how to respond effectively:
+
+No, setState in React is not fully synchronous.
+
+The setState function, whether used in class components or with the useState hook in functional components, schedules a state update rather than applying it immediately. This "asynchronous" behavior exists because React batches state updates for performance reasons, especially within event handlers or when multiple state updates occur consecutively.
+
+</details>
+
+---
+
