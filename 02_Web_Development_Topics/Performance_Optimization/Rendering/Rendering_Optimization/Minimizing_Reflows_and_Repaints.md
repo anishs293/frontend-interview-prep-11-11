@@ -1,0 +1,1 @@
+Techniques to reduce layout shifts and re-renders, such as batching DOM changes, using CSS animations over JavaScript, and avoiding layout thrashing.

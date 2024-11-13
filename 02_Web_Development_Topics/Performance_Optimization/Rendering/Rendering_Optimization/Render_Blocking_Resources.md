@@ -1,0 +1,1 @@
+How CSS and JavaScript can block rendering and ways to optimize them, e.g., by using async or defer for scripts.

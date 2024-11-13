@@ -1,0 +1,1 @@
+Loading resources only when they’re needed (e.g., images, iframes) to reduce initial page load time.
