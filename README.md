@@ -1,21 +1,6 @@
 # Frontend Interview Preparation Guide
 
 Welcome to the **Frontend Interview Preparation Guide**! This repository is a comprehensive resource for aspiring frontend developers aiming to excel in interviews and secure high-paying jobs.
-
-## 📚 **Table of Contents**
-
-1. [Frontend Basics](./01_Frontend_Basics/)
-   - [HTML & CSS](./01_Frontend_Basics/HTML_CSS/)
-   - [JavaScript](./01_Frontend_Basics/JavaScript/)
-   - [Web Development Topics](./01_Frontend_Basics/Web_Development_Topics/)
-2. [Frameworks and Libraries](./02_Frameworks_and_Libraries/)
-   - [React](./02_Frameworks_and_Libraries/React/)
-   - [Next.js](./02_Frameworks_and_Libraries/NextJS/)
-   - [Other Libraries](./02_Frameworks_and_Libraries/Other_Libraries/)
-3. [Coding Problems](./03_Coding_Problems/)
-   - [JavaScript](./03_Coding_Problems/JavaScript/)
-   - [React](./03_Coding_Problems/React/)
-
 ## 📝 **How to Use This Repository**
 
 - **Start with the Basics**: Solidify your understanding of core concepts in HTML, CSS, and JavaScript.
