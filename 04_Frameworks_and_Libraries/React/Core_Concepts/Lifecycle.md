@@ -127,6 +127,39 @@ Before React 16.3, methods like `componentWillMount`, `componentWillReceiveProps
 
 ---
 
+### **Lifecycle Methods Overview Table**
+
+| **Phase** | **Method** | **Purpose** |
+| --- | --- | --- |
+| **Mounting** | `constructor()` | Initialize state and bind event handlers. |
+|  | `getDerivedStateFromProps()` | Update state based on props before rendering. |
+|  | `render()` | Render JSX to the Virtual DOM. |
+|  | `componentDidMount()` | Perform side-effects after the component mounts (e.g., API calls). |
+| **Updating** | `getDerivedStateFromProps()` | Update state based on props before rendering (called on every update). |
+|  | `shouldComponentUpdate()` | Determine if re-rendering is necessary for performance optimization. |
+|  | `render()` | Re-render component if necessary. |
+|  | `getSnapshotBeforeUpdate()` | Capture DOM info before updates are applied (e.g., scroll position). |
+|  | `componentDidUpdate()` | Perform side-effects after the component updates. |
+| **Unmounting** | `componentWillUnmount()` | Clean up before component is removed (e.g., cancel subscriptions). |
+
+---
+
+### **React Hooks and Lifecycle Correspondence**
+
+In functional components, React hooks are used instead of lifecycle methods to manage side-effects. Here's how hooks correspond to the class component lifecycle:
+
+| **Lifecycle Method** | **Corresponding Hook** | **Purpose** |
+| --- | --- | --- |
+| `constructor()` | `useState` | Initialize state and manage data changes. |
+| `componentDidMount()` | `useEffect(() => { ... }, [])` | Perform side-effects after component mounts. |
+| `shouldComponentUpdate()` | No direct equivalent. Use **memoization** (`useMemo`) or `React.memo`. | Optimize rendering performance. |
+| `componentDidUpdate()` | `useEffect(() => { ... }, [dependencies])` | Perform side-effects after component updates. |
+| `componentWillUnmount()` | `useEffect(() => { return () => { ... }; }, [])` | Cleanup operations before component unmounts. |
+| `getDerivedStateFromProps()` | `useEffect(() => { ... }, [prop])` | Update state when a specific prop changes. |
+| `getSnapshotBeforeUpdate()` | `useRef` or custom hooks | Capture DOM state before updates (less common in hooks). |
+
+---
+
 ## 4. Component Lifecycle (Hooks in Functional Components) ⚓
 
 With functional components, React introduced the `useEffect` hook to handle lifecycle events. `useEffect` is flexible and can replace multiple lifecycle methods:
@@ -136,7 +169,8 @@ import React, { useState, useEffect } from 'react';
 
 function MyComponent() {
   const [data, setData] = useState(null);
-
+  
+  // ComponentDidMount & ComponentDidUpdate
   useEffect(() => {
     // Fetching data or other side effects 📥
     fetch('https://api.example.com/data')

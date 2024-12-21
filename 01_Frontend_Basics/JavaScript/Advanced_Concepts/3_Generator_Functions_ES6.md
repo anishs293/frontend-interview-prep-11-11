@@ -4,8 +4,8 @@ A **generator function** in JavaScript is a special type of function that can be
 
 - **Syntax**: Defined with `function*` syntax and uses the `yield` keyword to produce a sequence of values.
 - **Execution**: Each time the generator function is called (using `.next()`), it resumes from where it last paused, making it useful for handling sequences and asynchronous tasks.
+![alt text](../../../11_Resources/images_used/generator.jpg)
 
-![alt text](../../../06_Resources/images_used/generator.jpg)
 ---
 
 # 🗓 When is a Generator Function Used?
